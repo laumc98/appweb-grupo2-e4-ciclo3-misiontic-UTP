@@ -3,3 +3,4 @@
 Repositorio de trabajo del Equipo 4 del Grupo 02 
 
 ## Integrantes
+* Laura Natalia Motta Cadena
