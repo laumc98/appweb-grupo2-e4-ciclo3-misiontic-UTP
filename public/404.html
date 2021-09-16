@@ -1,3 +1,4 @@
+<!-- PAGINA PARA MOSTRAR EL ERROR DE PAGINA NO ENCONTRADA -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +8,43 @@
     <title>Error not Found</title>
 </head>
 <body>
-    <h1>La pagina no ha sido encontrada</h1>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script type="text/x-template" id="checkbox-template">
+        <div class="checkbox-wrapper" @click="check">
+            <div :class="{ checkbox: true, checked: checked }"></div>
+            <div class="title">{{ title }}</div>
+        </div>
+    </script>
+
+    <!-- Componente header -->
+    <script type="text/x-template" id="header-page-template">
+        <header>
+            <div class="header__section-login">
+                <a href="/ingreso">Ingrese</a>
+                <a href="/registro">Registrese</a>
+            </div>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="/">Inicio</a>
+                        <a href="/premios">Premios</a>
+                        <a href="/eventos">Eventos</a>
+                        
+                    </li>
+                </ul>
+            </nav>
+        </header>
+    </script>
+    <div id="app">
+        <header-app></header-app>
+        
+        <!-- Empezar a modificar desde aquí -->
+        <h1>La pagina no ha sido encontrada</h1>
+
+
+        <!-- Fin de la modificacion -->
+    </div>
+    <script src= "/static/js/404.js"></script>
+    
 </body>
 </html>

@@ -1,15 +1,17 @@
 const express = require("express");
 const path = require('path');
 
+// Se inicia un objeto express
 const app = express();
+// se define el puerto donde se ejecuta la aplicación
 const port = process.env.PORT || 8080;
 
-// para usar archivos estaticos
+// para usar archivos estaticos dentro de las carpetas
 app.use('/static/assets', express.static(path.join(__dirname,'/public/assets')));
 app.use('/static/css', express.static(path.join(__dirname,'/public/css')));
 app.use('/static/js', express.static(path.join(__dirname,'/public/js')));
 
-// Rutas
+// Rutas de navegación de la aplicación
 app.get('/', function (req, res) {
     res.sendFile(path.join(__dirname, '/public/index.html'));
     //res.sendFile(path.join(__dirname, '/public/index.js'));
