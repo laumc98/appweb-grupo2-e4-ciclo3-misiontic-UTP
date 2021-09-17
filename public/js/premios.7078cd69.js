@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["premios"],{a2b0:function(e,n,t){"use strict";t.r(n);var r=function(){var e=this,n=e.$createElement,t=e._self._c||n;return t("h1",[e._v("Premios")])},s=[],l=t("2877"),o={},u=Object(l["a"])(o,r,s,!1,null,null,null);n["default"]=u.exports}}]);
+//# sourceMappingURL=premios.7078cd69.js.map
