@@ -70,7 +70,7 @@ export default {};
     .footer__social-links{
         .footer__social-links-contacto{
             margin: 0 50px;
-            border-radius:42% 0% 42% 0% / 75% 0% 75% 0% ;
+            border-radius:42% 0% 30% 0% / 52% 0% 60% 0% ;
             background:$color-footer-section-contacto;
             padding-right: 5rem;
             padding-block: 2rem;
