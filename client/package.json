@@ -7,6 +7,7 @@
     "build": "vue-cli-service build --dest ./../public"
   },
   "dependencies": {
+    "@mdi/font": "^6.1.95",
     "bootstrap": "^5.1.1",
     "core-js": "^3.6.5",
     "sweetalert2": "^11.1.5",
