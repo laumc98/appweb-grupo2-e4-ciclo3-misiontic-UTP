@@ -1,4 +1,5 @@
 <template>
+<div>
   <header class="header navbar bg-light">
     <div class="header__navbar-brand navbar-brand">
       <router-link to="/">
@@ -28,14 +29,36 @@
       </nav>
     </div>
     <div class="header__section-login">
-      <button class="header__btn-login">Ingresar</button>
+      <button class="header__btn-login" @click="showModalLogin">Ingresar</button>
       <button class="header__btn-register">Registrate</button>
     </div>
   </header>
+  <ModalLogin :showModal="isOpenModalLogin" @closeLogin="closeModalLogin"></ModalLogin>
+
+</div>
 </template>
+
 <script>
-export default {};
+import ModalLogin from "./../views/ModalLogin.vue";
+
+export default {
+  data() {
+    return {
+      isOpenModalLogin: false,
+    };
+  },
+  methods: {
+    showModalLogin() {
+      this.isOpenModalLogin = true;
+    },
+    closeModalLogin() {
+      this.isOpenModalLogin = false;
+    },
+  },
+  components: { ModalLogin },
+};
 </script>
+
 <style lang="scss" scoped>
 .header {
   padding: 5px 50px;
