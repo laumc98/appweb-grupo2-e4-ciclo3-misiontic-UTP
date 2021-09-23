@@ -1,7 +1,7 @@
 <template>
   <div class="container">
-    <div v-show="showModal">
-      <div class="modal-mask">
+    <div v-show="showModal" class="modal-mask">
+      <div class="modal-wrapper">
         <div class="modal-dialog">
           <div class="modal-content">
            <div class="modal-header">

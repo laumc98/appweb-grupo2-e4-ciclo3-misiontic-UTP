@@ -1,9 +1,9 @@
 <template>
   <div class="container">
-    <div v-show="showModal">
-      <div class="modal-mask">
-        <div class="modal-dialog">
-          <div class="modal-content">
+    <div v-show="showModal" class="modal-mask"> 
+      <div class="modal-wrapper">
+        <div class="modal-dialog" style="margin: 0">
+          <div class="modal-content" style="padding: 0; box-sizing: content-box; height: 100vh">
            <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" @click="$emit('closeLogin')"></button>
@@ -32,6 +32,7 @@ export default {
 
 }
 </script>
+
 <style lang="scss" scoped>
 .modal-mask {
   position: fixed;
@@ -48,6 +49,9 @@ export default {
 .modal-wrapper {
   display: table-cell;
   vertical-align: middle;
+  position: absolute;
+  right:0%;
+  height: 100%;
 }
 </style>
 
