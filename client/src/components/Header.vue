@@ -30,21 +30,24 @@
     </div>
     <div class="header__section-login">
       <button class="header__btn-login" @click="showModalLogin">Ingresar</button>
-      <button class="header__btn-register">Registrate</button>
+      <button class="header__btn-register" @click="showModalRegister">Registrate</button>
     </div>
   </header>
   <ModalLogin :showModal="isOpenModalLogin" @closeLogin="closeModalLogin"></ModalLogin>
+  <ModalRegister :showModal="isOpenModalRegister" @closeRegister="closeModalRegister"></ModalRegister>
 
 </div>
 </template>
 
 <script>
 import ModalLogin from "./../views/ModalLogin.vue";
+import ModalRegister from "./../views/ModalRegister.vue"
 
 export default {
   data() {
     return {
       isOpenModalLogin: false,
+      isOpenModalRegister: false,
     };
   },
   methods: {
@@ -54,8 +57,14 @@ export default {
     closeModalLogin() {
       this.isOpenModalLogin = false;
     },
+    showModalRegister(){
+      this.isOpenModalRegister = true;
+    },
+    closeModalRegister(){
+      this.isOpenModalRegister = false;
+    }
   },
-  components: { ModalLogin },
+  components: { ModalLogin, ModalRegister},
 };
 </script>
 
