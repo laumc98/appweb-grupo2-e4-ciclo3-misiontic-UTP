@@ -9,51 +9,72 @@
           >
             <div class="modal-header">
               <!--<h5 class="modal-title" id="exampleModalLabel">Mi Cuenta</h5>-->
-              <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-                @click="$emit('closeLogin')"
-              ></button>
             </div>
             <div class="modal-body d-flex">
               <div class="modal-icon-cuenta">
-                <h2 class="mdi mdi-account-outline align-baseline fs-4"></h2>
+                <h2 class="mdi mdi-account-outline align-baseline fs-2"></h2>
               </div>
 
-              <div class="modal-formulario ps-3">
+              <div class="modal-formulario ps-3; p-2 flex-grow-1 bd-highlight">
                 <h2
                   style="font-family: 'Allerta', sans-serif; text-align: start"
                   class="fs-5"
                 >
                   <strong style="align-self: center">Mi Cuenta</strong>
                 </h2>
+                <p></p>
                 <h6
-                  syle="font-family: 'Abel', sans-serif; text-align: start"
-                  >
-                  Ingresa con email y contraseña
+                  class="text-start"
+                >
+                  Ingresa con usuario y contraseña
                 </h6>
                 <form>
                     <div class="mb-3">
-                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                      <input class="form-control" type="text" placeholder="Ingresa tu nombre de usuario" syle="font-family: 'Abel', sans-serif">
                     </div>
-                    <div class="mb-4">
-                      <input type="password" class="form-control" id="exampleInputPassword1">
+                    <div class="mb-3">
+                      <input class= "form-control" type="text" placeholder="Ingresa tu contraseña" syle="font-family: 'Abel', sans-serif">
                     </div>
                 </form>
+                <p></p>
+                <h6
+                class="text-start"
+                >
+                <router-link to="" class="routerlink">Olvidaste tu contraseña</router-link>
+                </h6>
+                <p></p>
+                <div class="d-grid gap-2">
+                  <button 
+                  class="btn btn-primary" 
+                  type="button"
+                  >
+                  Entrar
+                  </button>
+                  <button 
+                  class="btn btn-secondary" 
+                  type="button"
+                  data-bs-dismiss="modal"
+                  @click="$emit('closeLogin')"
+                  >
+                  <i class="mdi mdi-arrow-left"></i>
+                  Volver
+                  </button>
+                <p></p>
+                <h6
+                class="text-start"
+                >
+                <a class="routerlink" @click="$emit('openRegister')">¿No tienes una cuenta? Creala ahora</a>
+                </h6>
+                <p></p>
+                <p></p>
+                <div class="text-center">
+                  <img class="footer__div-logo-img" src="@/assets/Logo_MuevetexPuntos.png" alt="" />
+                </div>
+                </div>
               </div>
             </div>
+
             <div class="modal-footer">
-              <button
-                type="button"
-                class="btn btn-secondary"
-                data-bs-dismiss="modal"
-                @click="$emit('closeLogin')"
-              >
-                Close
-              </button>
-              <button type="button" class="btn btn-primary">Save changes</button>
             </div>
           </div>
         </div>
@@ -66,7 +87,14 @@
 export default {
   props: ["showModal"],
   data() {
-    return {};
+    return{
+    isOpenModalRegister: false,
+    };
+  },
+  methods:{
+    toggleToRegister(){
+      this.isOpenModalRegister =  true;
+    },
   },
 };
 </script>
@@ -97,7 +125,7 @@ export default {
   position: absolute;
   width: 451px;
   height: 881px;
-  left: 915px;
+  right: 0;
   top: 0px;
 }
 
@@ -106,9 +134,54 @@ export default {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.icon-user {
-  fill: "currentColor";
-  transform-origin: 50% 50%;
-  transform: scale(2);
+.btn-primary {
+  font-family: Abel;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 18px;
+  background: #FF5A60;
+  border-radius: 20px;
+  border: none;
 }
+
+.btn-secondary {
+  font-family: Abel;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 18px;
+  color: #43BDD4;
+  background: #FFFFFF;
+  border: 1px solid #43BDD4;
+  box-sizing: border-box;
+  border-radius: 20px;
+}
+
+.bi-arrow-left-short {
+  color: #43BDD4;
+}
+
+.routerlink {
+  font-family: Abel;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  cursor: pointer;
+  color: #000000;
+}
+
+.text-start{
+  font-family: Abel;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  color: #000000;
+}
+
+.footer__div-logo-img {
+  width: 200px;
+  margin: 20px;
+}
+
 </style>

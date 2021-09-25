@@ -33,7 +33,7 @@
       <button class="header__btn-register" @click="showModalRegister">Registrate</button>
     </div>
   </header>
-  <ModalLogin :showModal="isOpenModalLogin" @closeLogin="closeModalLogin"></ModalLogin>
+  <ModalLogin :showModal="isOpenModalLogin" @closeLogin="closeModalLogin" @openRegister="toggleToRegister"></ModalLogin>
   <ModalRegister :showModal="isOpenModalRegister" @closeRegister="closeModalRegister"></ModalRegister>
 
 </div>
@@ -51,6 +51,10 @@ export default {
     };
   },
   methods: {
+    toggleToRegister() {
+      this.isOpenModalLogin = false;
+      this.isOpenModalRegister = true;
+    },
     showModalLogin() {
       this.isOpenModalLogin = true;
     },
