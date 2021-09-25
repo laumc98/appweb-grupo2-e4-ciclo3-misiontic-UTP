@@ -73,7 +73,6 @@
                 </div>
               </div>
             </div>
-
             <div class="modal-footer">
             </div>
           </div>
@@ -88,13 +87,7 @@ export default {
   props: ["showModal"],
   data() {
     return{
-    isOpenModalRegister: false,
     };
-  },
-  methods:{
-    toggleToRegister(){
-      this.isOpenModalRegister =  true;
-    },
   },
 };
 </script>
@@ -122,7 +115,6 @@ export default {
   position: absolute;
   //right:0%;
   //height: 100%;
-  position: absolute;
   width: 451px;
   height: 881px;
   right: 0;
